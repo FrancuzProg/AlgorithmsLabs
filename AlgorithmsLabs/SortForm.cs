@@ -124,50 +124,51 @@ namespace AlgorithmsLabs
             else dgvSortedArray.Size = new Size(dgvArray.Size.Width, 25);
         }
 
-        static void SelectionSort(int[] Array)
+        private void SelectionSort(int[] Array)
         {
             for (int i = 0; i < Array.Length - 1; i++)
             {
                 int min = i;
-                for (int j = i + 1; j < Array.Length; j++)
+                for (int j = i + 1; j < Array.Length; j++, CompareCount++)
                     if (Array[j] < Array[min])
                         min = j;
                 Swap(ref Array[i], ref Array[min]);
             }
         }
 
-        static void BubbleSort(int[] Array)
+        private void BubbleSort(int[] Array)
         {
             for (int i = 0; i < Array.Length - 1; i++)
-                for (int j = 0; j < Array.Length - i - 1; j++)
+                for (int j = 0; j < Array.Length - i - 1; j++, CompareCount++)
                     if (Array[j] > Array[j + 1])
                         Swap(ref Array[j], ref Array[j + 1]);
         }
 
-        static void ShakerSort(int[] Array)
+        private void ShakerSort(int[] Array)
         {
             int Left = 0;
             int Right = Array.Length - 1;
             while (Left <= Right)
             {
-                for (int i = Left; i < Right; i++)
+                for (int i = Left; i < Right; i++, CompareCount++)
                     if (Array[i] > Array[i + 1])
                         Swap(ref Array[i], ref Array[i + 1]);
                 Right--;
-                for (int i = Right; i > Left; i--)
+                CompareCount += Right - Left;
+                for (int i = Right; i > Left; i--, CompareCount++)
                     if (Array[i - 1] > Array[i])
                         Swap(ref Array[i - 1], ref Array[i]);
                 Left++;
             }
         }
 
-        static void QuickSort(int[] Array, int Start, int End)
+        private void QuickSort(int[] Array, int Start, int End)
         {
             if (Start >= End)
                 return;
             int Border = Start;
             int Pivot = (new Random()).Next(Start, End + 1);
-            for (int i = Start; i <= End; i++)
+            for (int i = Start; i <= End; i++, CompareCount++)
                 if (Array[i] < Array[Pivot])
                 {
                     Swap(ref Array[i], ref Array[Border]);
@@ -180,15 +181,18 @@ namespace AlgorithmsLabs
             QuickSort(Array, Border + 1, End);
         }
 
-        static void Swap(ref int a, ref int b)
+        private void Swap(ref int a, ref int b)
         {
             int tmp = a;
             a = b;
             b = tmp;
+            SwapCount++;
         }
 
         private void btnSelectionSort_Click(object sender, EventArgs e)
         {
+            CompareCount = 0;
+            SwapCount = 0;
             int[] Array = GetArray();
             Stopwatch timer = new Stopwatch();
             timer.Start();
@@ -196,10 +200,14 @@ namespace AlgorithmsLabs
             timer.Stop();
             SetSortedArray(Array);
             lblSortTime.Text = timer.Elapsed.ToString();
+            lblCompare.Text = CompareCount.ToString();
+            lblSwap.Text = SwapCount.ToString();
         }
 
         private void btnBubbleSort_Click(object sender, EventArgs e)
         {
+            CompareCount = 0;
+            SwapCount = 0;
             int[] Array = GetArray();
             Stopwatch timer = new Stopwatch();
             timer.Start();
@@ -207,10 +215,14 @@ namespace AlgorithmsLabs
             timer.Stop();
             SetSortedArray(Array);
             lblSortTime.Text = timer.Elapsed.ToString();
+            lblCompare.Text = CompareCount.ToString();
+            lblSwap.Text = SwapCount.ToString();
         }
 
         private void btnShakerSort_Click(object sender, EventArgs e)
         {
+            CompareCount = 0;
+            SwapCount = 0;
             int[] Array = GetArray();
             Stopwatch timer = new Stopwatch();
             timer.Start();
@@ -218,10 +230,14 @@ namespace AlgorithmsLabs
             timer.Stop();
             SetSortedArray(Array);
             lblSortTime.Text = timer.Elapsed.ToString();
+            lblCompare.Text = CompareCount.ToString();
+            lblSwap.Text = SwapCount.ToString();
         }
 
         private void btnQuickSort_Click(object sender, EventArgs e)
         {
+            CompareCount = 0;
+            SwapCount = 0;
             int[] Array = GetArray();
             Stopwatch timer = new Stopwatch();
             timer.Start();
@@ -229,6 +245,10 @@ namespace AlgorithmsLabs
             timer.Stop();
             SetSortedArray(Array);
             lblSortTime.Text = timer.Elapsed.ToString();
+            lblCompare.Text = CompareCount.ToString();
+            lblSwap.Text = SwapCount.ToString();
         }
+
+        private int SwapCount, CompareCount;
     }
 }

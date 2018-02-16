@@ -43,6 +43,10 @@
             this.btnQuickSort = new System.Windows.Forms.Button();
             this.btnBubbleSort = new System.Windows.Forms.Button();
             this.dgvSortedArray = new System.Windows.Forms.DataGridView();
+            this.lblCompare = new System.Windows.Forms.Label();
+            this.lblNumCompare = new System.Windows.Forms.Label();
+            this.lblSwap = new System.Windows.Forms.Label();
+            this.lblNumSwap = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArray)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSortedArray)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +55,7 @@
             // 
             this.tbNumber.Font = new System.Drawing.Font("Arial", 18F);
             this.tbNumber.Location = new System.Drawing.Point(20, 100);
-            this.tbNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNumber.Margin = new System.Windows.Forms.Padding(4);
             this.tbNumber.Name = "tbNumber";
             this.tbNumber.Size = new System.Drawing.Size(84, 35);
             this.tbNumber.TabIndex = 36;
@@ -123,6 +127,7 @@
             this.tbRandom.Font = new System.Drawing.Font("Arial", 18F);
             this.tbRandom.Location = new System.Drawing.Point(430, 100);
             this.tbRandom.Margin = new System.Windows.Forms.Padding(4);
+            this.tbRandom.MaxLength = 3;
             this.tbRandom.Name = "tbRandom";
             this.tbRandom.Size = new System.Drawing.Size(70, 35);
             this.tbRandom.TabIndex = 40;
@@ -150,7 +155,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(17, 342);
+            this.lblTime.Location = new System.Drawing.Point(17, 339);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(152, 18);
             this.lblTime.TabIndex = 45;
@@ -159,9 +164,10 @@
             // lblSortTime
             // 
             this.lblSortTime.AutoSize = true;
-            this.lblSortTime.Location = new System.Drawing.Point(175, 342);
+            this.lblSortTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblSortTime.Location = new System.Drawing.Point(159, 342);
             this.lblSortTime.Name = "lblSortTime";
-            this.lblSortTime.Size = new System.Drawing.Size(70, 18);
+            this.lblSortTime.Size = new System.Drawing.Size(58, 16);
             this.lblSortTime.TabIndex = 46;
             this.lblSortTime.Text = "00:00:00";
             // 
@@ -234,11 +240,51 @@
             this.dgvSortedArray.Size = new System.Drawing.Size(480, 25);
             this.dgvSortedArray.TabIndex = 51;
             // 
+            // lblCompare
+            // 
+            this.lblCompare.AutoSize = true;
+            this.lblCompare.Location = new System.Drawing.Point(453, 340);
+            this.lblCompare.Name = "lblCompare";
+            this.lblCompare.Size = new System.Drawing.Size(17, 18);
+            this.lblCompare.TabIndex = 53;
+            this.lblCompare.Text = "0";
+            // 
+            // lblNumCompare
+            // 
+            this.lblNumCompare.AutoSize = true;
+            this.lblNumCompare.Location = new System.Drawing.Point(308, 340);
+            this.lblNumCompare.Name = "lblNumCompare";
+            this.lblNumCompare.Size = new System.Drawing.Size(139, 18);
+            this.lblNumCompare.TabIndex = 52;
+            this.lblNumCompare.Text = "Число сравнений: ";
+            // 
+            // lblSwap
+            // 
+            this.lblSwap.AutoSize = true;
+            this.lblSwap.Location = new System.Drawing.Point(453, 362);
+            this.lblSwap.Name = "lblSwap";
+            this.lblSwap.Size = new System.Drawing.Size(17, 18);
+            this.lblSwap.TabIndex = 55;
+            this.lblSwap.Text = "0";
+            // 
+            // lblNumSwap
+            // 
+            this.lblNumSwap.AutoSize = true;
+            this.lblNumSwap.Location = new System.Drawing.Point(283, 362);
+            this.lblNumSwap.Name = "lblNumSwap";
+            this.lblNumSwap.Size = new System.Drawing.Size(164, 18);
+            this.lblNumSwap.TabIndex = 54;
+            this.lblNumSwap.Text = "Число перестановок: ";
+            // 
             // SortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 368);
+            this.ClientSize = new System.Drawing.Size(514, 387);
+            this.Controls.Add(this.lblSwap);
+            this.Controls.Add(this.lblNumSwap);
+            this.Controls.Add(this.lblCompare);
+            this.Controls.Add(this.lblNumCompare);
             this.Controls.Add(this.dgvSortedArray);
             this.Controls.Add(this.btnQuickSort);
             this.Controls.Add(this.btnBubbleSort);
@@ -255,10 +301,10 @@
             this.Controls.Add(this.dgvArray);
             this.Controls.Add(this.tbNumber);
             this.Font = new System.Drawing.Font("Arial", 12F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SortForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SortForm";
+            this.Text = "Сортировка массива";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SortForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArray)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSortedArray)).EndInit();
@@ -284,5 +330,9 @@
         private System.Windows.Forms.Button btnQuickSort;
         private System.Windows.Forms.Button btnBubbleSort;
         private System.Windows.Forms.DataGridView dgvSortedArray;
+        private System.Windows.Forms.Label lblCompare;
+        private System.Windows.Forms.Label lblNumCompare;
+        private System.Windows.Forms.Label lblSwap;
+        private System.Windows.Forms.Label lblNumSwap;
     }
 }
