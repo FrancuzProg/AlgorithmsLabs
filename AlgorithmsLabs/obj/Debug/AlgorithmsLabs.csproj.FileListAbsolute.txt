@@ -1,0 +1,12 @@
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\bin\Debug\AlgorithmsLabs.exe.config
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\bin\Debug\AlgorithmsLabs.exe
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\bin\Debug\AlgorithmsLabs.pdb
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.csprojResolveAssemblyReference.cache
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.FindForm.resources
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.SortForm.resources
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.StartForm.resources
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.Properties.Resources.resources
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.csproj.GenerateResource.Cache
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.exe
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.pdb
+C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.MergeForm.resources

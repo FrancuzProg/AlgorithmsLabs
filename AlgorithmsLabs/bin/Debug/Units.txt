@@ -1,0 +1,6 @@
+AlgorithmsLabs.FindForm
+Поиск
+AlgorithmsLabs.SortForm
+Сортировка
+AlgorithmsLabs.MergeForm
+Слияние

@@ -46,36 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FindForm.cs">
+    <Compile Include="FindStringAlgorithms\BouerMoure.cs" />
+    <Compile Include="FindStringAlgorithms\FindForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FindForm.designer.cs">
+    <Compile Include="FindStringAlgorithms\FindForm.designer.cs">
       <DependentUpon>FindForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SortForm.cs">
+    <Compile Include="MergingAlgorithms\MergeController.cs" />
+    <Compile Include="MergingAlgorithms\MergeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SortForm.Designer.cs">
+    <Compile Include="MergingAlgorithms\MergeForm.Designer.cs">
+      <DependentUpon>MergeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MergingAlgorithms\MergeSort.cs" />
+    <Compile Include="SortingAlgorithms\Sort.cs" />
+    <Compile Include="SortingAlgorithms\SortController.cs" />
+    <Compile Include="SortingAlgorithms\SortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SortingAlgorithms\SortForm.Designer.cs">
       <DependentUpon>SortForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartForm.cs">
+    <Compile Include="Main\StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartForm.Designer.cs">
+    <Compile Include="Main\StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Main\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stub.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <EmbeddedResource Include="FindForm.resx">
+    <EmbeddedResource Include="FindStringAlgorithms\FindForm.resx">
       <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SortForm.resx">
+    <EmbeddedResource Include="MergingAlgorithms\MergeForm.resx">
+      <DependentUpon>MergeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SortingAlgorithms\SortForm.resx">
       <DependentUpon>SortForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartForm.resx">
+    <EmbeddedResource Include="Main\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -100,6 +111,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
