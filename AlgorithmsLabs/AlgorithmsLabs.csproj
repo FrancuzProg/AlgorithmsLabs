@@ -53,6 +53,7 @@
     <Compile Include="FindStringAlgorithms\FindForm.designer.cs">
       <DependentUpon>FindForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\UnitsKeeper.cs" />
     <Compile Include="MergingAlgorithms\MergeController.cs" />
     <Compile Include="MergingAlgorithms\MergeForm.cs">
       <SubType>Form</SubType>

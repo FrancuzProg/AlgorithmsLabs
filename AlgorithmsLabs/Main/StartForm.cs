@@ -13,16 +13,62 @@ namespace AlgorithmsLabs
             LoadButtons();
         }
 
+        /*private void LoadButtons()
+        {
+            string path = Directory.GetCurrentDirectory();
+            DirectoryInfo info = new DirectoryInfo(path);
+            info = info.Parent.Parent;
+            DirectoryInfo[] dirs = info.GetDirectories("*Algorithms");
+            int Y = 45;
+            foreach (DirectoryInfo dir in dirs)
+            {
+                string name = dir.GetFiles("*Form.cs")[0].Name;
+                name = name.Substring(0, name.Length - 3);
+                Button btn = new Button();
+                btn.Location = new Point(40, Y);
+                btn.Name = "AlgorithmsLabs." + name;
+                btn.Text = name;
+                btn.Size = new Size(140, 40);
+                btn.Click += (object sender, EventArgs e) =>
+                {
+                    Hide();
+                    string TypeName = (sender as Button).Name;
+                    Type type = Type.GetType(TypeName);
+                    Form form = (Form)Activator.CreateInstance(type);
+                    form.Show();
+                };
+                Controls.Add(btn);
+                Size = new Size(Size.Width, Size.Height + 50);
+                Y += 50;
+            }
+        }*/
+
         private void LoadButtons()
         {
-            /*StreamWriter SW = new StreamWriter("Units.txt");
-            SW.WriteLine(typeof(FindForm).FullName);
-            SW.WriteLine("Поиск");
-            SW.WriteLine(typeof(SortForm).FullName);
-            SW.WriteLine("Сортировка");
-            SW.WriteLine(typeof(MergeForm).FullName);
-            SW.WriteLine("Слияние");
-            SW.Close();*/
+            int Y = 45;
+            foreach (Unit unit in UnitsKeeper.Units)
+            {
+                Button btn = new Button();
+                btn.Location = new Point(40, Y);
+                btn.Name = unit.form;
+                btn.Text = unit.name;
+                btn.Size = new Size(140, 40);
+                btn.Click += (object sender, EventArgs e) =>
+                {
+                    Hide();
+                    string TypeName = (sender as Button).Name;
+                    Type type = Type.GetType(TypeName);
+                    Form form = (Form)Activator.CreateInstance(type);
+                    form.Show();
+                };
+                Controls.Add(btn);
+                Size = new Size(Size.Width, Size.Height + 50);
+                Y += 50;
+            }
+        }
+
+        /*private void LoadButtons()
+        {
             StreamReader SR = new StreamReader("Units.txt");
             int Y = 45;
             while(!SR.EndOfStream)
@@ -59,6 +105,6 @@ namespace AlgorithmsLabs
                 Y += 50;
             }
             SR.Close();
-        }
+        }*/
     }
 }
