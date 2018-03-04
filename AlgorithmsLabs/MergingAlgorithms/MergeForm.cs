@@ -5,11 +5,14 @@ namespace AlgorithmsLabs
 {
     public partial class MergeForm : Form
     {
+        StartForm MainForm;
+
         MergeController Controller = new MergeController();
 
-        public MergeForm()
+        public MergeForm(StartForm main)
         {
             InitializeComponent();
+            MainForm = main;
             Controller.SetStartPath(tbPath);
         }
 
@@ -43,7 +46,12 @@ namespace AlgorithmsLabs
 
         private void MergeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            MainForm.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

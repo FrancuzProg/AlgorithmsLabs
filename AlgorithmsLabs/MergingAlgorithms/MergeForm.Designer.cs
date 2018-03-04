@@ -35,9 +35,9 @@
             this.btnRandomSort = new System.Windows.Forms.Button();
             this.tbN = new System.Windows.Forms.TextBox();
             this.lblN = new System.Windows.Forms.Label();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.lblSortTime = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSort
@@ -122,7 +122,7 @@
             // 
             this.lblSortTime.AutoSize = true;
             this.lblSortTime.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblSortTime.Location = new System.Drawing.Point(172, 207);
+            this.lblSortTime.Location = new System.Drawing.Point(172, 215);
             this.lblSortTime.Name = "lblSortTime";
             this.lblSortTime.Size = new System.Drawing.Size(70, 18);
             this.lblSortTime.TabIndex = 56;
@@ -132,17 +132,30 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblTime.Location = new System.Drawing.Point(12, 205);
+            this.lblTime.Location = new System.Drawing.Point(12, 213);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(154, 20);
             this.lblTime.TabIndex = 55;
             this.lblTime.Text = "Время сортировки:";
             // 
+            // btnBack
+            // 
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnBack.Location = new System.Drawing.Point(318, 207);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(99, 32);
+            this.btnBack.TabIndex = 57;
+            this.btnBack.Text = "Меню";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // MergeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 232);
+            this.ClientSize = new System.Drawing.Size(426, 249);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblSortTime);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblN);
@@ -152,6 +165,8 @@
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.tbPath);
             this.Controls.Add(this.btnSort);
+            this.MaximumSize = new System.Drawing.Size(442, 288);
+            this.MinimumSize = new System.Drawing.Size(442, 288);
             this.Name = "MergeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Внешняя сортировка слиянием";
@@ -170,8 +185,8 @@
         private System.Windows.Forms.Button btnRandomSort;
         private System.Windows.Forms.TextBox tbN;
         private System.Windows.Forms.Label lblN;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label lblSortTime;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Button btnBack;
     }
 }

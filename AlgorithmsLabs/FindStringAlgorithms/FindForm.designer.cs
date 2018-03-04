@@ -32,6 +32,7 @@
             this.tbTemplate = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.cbRegister = new System.Windows.Forms.CheckBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbText
@@ -76,17 +77,32 @@
             this.cbRegister.Text = "С учётом регистра";
             this.cbRegister.UseVisualStyleBackColor = true;
             // 
+            // btnBack
+            // 
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnBack.Location = new System.Drawing.Point(708, 374);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(61, 33);
+            this.btnBack.TabIndex = 58;
+            this.btnBack.Text = "Меню";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FindForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 418);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.cbRegister);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.tbTemplate);
             this.Controls.Add(this.rtbText);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(797, 457);
+            this.MinimumSize = new System.Drawing.Size(797, 457);
             this.Name = "FindForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Поиск образа в строке";
@@ -102,6 +118,7 @@
         private System.Windows.Forms.TextBox tbTemplate;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.CheckBox cbRegister;
+        private System.Windows.Forms.Button btnBack;
     }
 }
 

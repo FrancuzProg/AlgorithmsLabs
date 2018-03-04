@@ -39,11 +39,14 @@ namespace AlgorithmsLabs
         {
             if (new FileInfo(FileName).Exists)
             {
+                string Array;
+                MergeSort.ResetCounters();
+                DatabaseController.CreateTable();
                 Stopwatch timer = new Stopwatch();
                 timer.Start();
                 try
                 {
-                    MergeSort.NaturalMergeSort(FileName);
+                    Array = MergeSort.NaturalMergeSort(FileName);
                 }
                 catch
                 {
@@ -51,6 +54,7 @@ namespace AlgorithmsLabs
                     return "00:00:00";
                 }
                 timer.Stop();
+                DatabaseController.AddSort("MergeSort", timer.Elapsed.ToString(), MergeSort.GetCompareCount(), MergeSort.GetSwapCount(), Array);
                 MessageBox.Show("Сортировка выполнена!", "Сортировка");
                 return timer.Elapsed.ToString();
             }
@@ -71,12 +75,26 @@ namespace AlgorithmsLabs
             for (int i = 0; i < N; i++)
                 SW.WriteLine(rand.Next(0, 100));
             SW.Close();
+            string Array;
+            MergeSort.ResetCounters();
+            DatabaseController.CreateTable();
             Stopwatch timer = new Stopwatch();
             timer.Start();
-            MergeSort.NaturalMergeSort(FileName);
+            Array = MergeSort.NaturalMergeSort(FileName);
             timer.Stop();
+            DatabaseController.AddSort("MergeSort", timer.Elapsed.ToString(), MergeSort.GetCompareCount(), MergeSort.GetSwapCount(), Array);
             MessageBox.Show("Файл Array.txt заполнен " + N + " случайными числами и успешно отсортирован!", "Сортировка");
             return timer.Elapsed.ToString();
         }
+
+        /*public string SortBDArray()
+        {
+            Stopwatch timer = new Stopwatch();
+            timer.Start();
+            MergeSort.NaturalMergeSort();
+            timer.Stop();
+            MessageBox.Show("Таблица array из БД успешно отсортирована!", "Сортировка");
+            return timer.Elapsed.ToString();
+        }*/
     }
 }

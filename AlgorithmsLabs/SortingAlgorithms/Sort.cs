@@ -32,6 +32,7 @@ namespace AlgorithmsLabs
                 for (int j = i + 1; j < Array.Length; j++, CompareCount++)
                     if (Array[j] < Array[min])
                         min = j;
+                DatabaseController.SetIteration(Array);
                 Swap(ref Array[i], ref Array[min]);
             }
         }
@@ -41,7 +42,10 @@ namespace AlgorithmsLabs
             for (int i = 0; i < Array.Length - 1; i++)
                 for (int j = 0; j < Array.Length - i - 1; j++, CompareCount++)
                     if (Array[j] > Array[j + 1])
+                    {
+                        DatabaseController.SetIteration(Array);
                         Swap(ref Array[j], ref Array[j + 1]);
+                    } 
         }
 
         static public void ShakerSort(int[] Array)
@@ -52,12 +56,18 @@ namespace AlgorithmsLabs
             {
                 for (int i = Left; i < Right; i++, CompareCount++)
                     if (Array[i] > Array[i + 1])
+                    {
+                        DatabaseController.SetIteration(Array);
                         Swap(ref Array[i], ref Array[i + 1]);
+                    } 
                 Right--;
                 CompareCount += Right - Left;
                 for (int i = Right; i > Left; i--, CompareCount++)
                     if (Array[i - 1] > Array[i])
+                    {
+                        DatabaseController.SetIteration(Array);
                         Swap(ref Array[i - 1], ref Array[i]);
+                    }   
                 Left++;
             }
         }
@@ -71,11 +81,13 @@ namespace AlgorithmsLabs
             for (int i = Start; i <= End; i++, CompareCount++)
                 if (Array[i] < Array[Pivot])
                 {
+                    DatabaseController.SetIteration(Array);
                     Swap(ref Array[i], ref Array[Border]);
                     if (Border == Pivot)
                         Pivot = i;
                     Border++;
                 }
+            DatabaseController.SetIteration(Array);
             Swap(ref Array[Pivot], ref Array[Border]);
             QuickSort(Array, Start, Border - 1);
             QuickSort(Array, Border + 1, End);
@@ -87,6 +99,7 @@ namespace AlgorithmsLabs
             a = b;
             b = tmp;
             SwapCount++;
+            Console.WriteLine("Перестановка элемент " + a + " с элементом " + b + ";");
         }
     }
 }

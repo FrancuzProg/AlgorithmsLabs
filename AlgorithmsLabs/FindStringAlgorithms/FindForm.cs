@@ -5,9 +5,12 @@ namespace AlgorithmsLabs
 {
     public partial class FindForm : Form
     {
-        public FindForm()
+        StartForm MainForm;
+
+        public FindForm(StartForm main)
         {
             InitializeComponent();
+            MainForm = main;
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -35,7 +38,12 @@ namespace AlgorithmsLabs
 
         private void FindForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            MainForm.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

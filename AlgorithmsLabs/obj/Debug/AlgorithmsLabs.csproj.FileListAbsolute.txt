@@ -10,3 +10,6 @@ C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\Algorithms
 C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.exe
 C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.pdb
 C:\Users\Francuz\Documents\Visual Studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.MergeForm.resources
+C:\Users\Francuz\documents\visual studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\bin\Debug\MySql.Data.dll
+C:\Users\Francuz\documents\visual studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\bin\Debug\MySql.Data.xml
+C:\Users\Francuz\documents\visual studio 2015\Projects\AlgorithmsLabs\AlgorithmsLabs\obj\Debug\AlgorithmsLabs.DatabaseForm.resources

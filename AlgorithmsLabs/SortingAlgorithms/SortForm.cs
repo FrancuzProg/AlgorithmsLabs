@@ -5,11 +5,14 @@ namespace AlgorithmsLabs
 {
     public partial class SortForm : Form
     {
+        StartForm MainForm;
+
         SortController Controller = new SortController();
 
-        public SortForm()
+        public SortForm(StartForm main)
         {
             InitializeComponent();
+            MainForm = main;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -71,7 +74,12 @@ namespace AlgorithmsLabs
 
         private void SortForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            MainForm.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

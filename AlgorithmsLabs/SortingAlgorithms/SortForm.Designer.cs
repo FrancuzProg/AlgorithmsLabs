@@ -47,6 +47,7 @@
             this.lblNumCompare = new System.Windows.Forms.Label();
             this.lblSwap = new System.Windows.Forms.Label();
             this.lblNumSwap = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArray)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSortedArray)).BeginInit();
             this.SuspendLayout();
@@ -243,7 +244,7 @@
             // lblCompare
             // 
             this.lblCompare.AutoSize = true;
-            this.lblCompare.Location = new System.Drawing.Point(453, 340);
+            this.lblCompare.Location = new System.Drawing.Point(175, 369);
             this.lblCompare.Name = "lblCompare";
             this.lblCompare.Size = new System.Drawing.Size(17, 18);
             this.lblCompare.TabIndex = 53;
@@ -252,7 +253,7 @@
             // lblNumCompare
             // 
             this.lblNumCompare.AutoSize = true;
-            this.lblNumCompare.Location = new System.Drawing.Point(308, 340);
+            this.lblNumCompare.Location = new System.Drawing.Point(30, 369);
             this.lblNumCompare.Name = "lblNumCompare";
             this.lblNumCompare.Size = new System.Drawing.Size(139, 18);
             this.lblNumCompare.TabIndex = 52;
@@ -261,7 +262,7 @@
             // lblSwap
             // 
             this.lblSwap.AutoSize = true;
-            this.lblSwap.Location = new System.Drawing.Point(453, 362);
+            this.lblSwap.Location = new System.Drawing.Point(175, 391);
             this.lblSwap.Name = "lblSwap";
             this.lblSwap.Size = new System.Drawing.Size(17, 18);
             this.lblSwap.TabIndex = 55;
@@ -270,17 +271,30 @@
             // lblNumSwap
             // 
             this.lblNumSwap.AutoSize = true;
-            this.lblNumSwap.Location = new System.Drawing.Point(283, 362);
+            this.lblNumSwap.Location = new System.Drawing.Point(5, 391);
             this.lblNumSwap.Name = "lblNumSwap";
             this.lblNumSwap.Size = new System.Drawing.Size(164, 18);
             this.lblNumSwap.TabIndex = 54;
             this.lblNumSwap.Text = "Число перестановок: ";
             // 
+            // btnBack
+            // 
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnBack.Location = new System.Drawing.Point(360, 354);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(140, 50);
+            this.btnBack.TabIndex = 58;
+            this.btnBack.Text = "Меню";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // SortForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 387);
+            this.ClientSize = new System.Drawing.Size(514, 416);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblSwap);
             this.Controls.Add(this.lblNumSwap);
             this.Controls.Add(this.lblCompare);
@@ -302,6 +316,8 @@
             this.Controls.Add(this.tbNumber);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(530, 455);
+            this.MinimumSize = new System.Drawing.Size(530, 455);
             this.Name = "SortForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сортировка массива";
@@ -334,5 +350,6 @@
         private System.Windows.Forms.Label lblNumCompare;
         private System.Windows.Forms.Label lblSwap;
         private System.Windows.Forms.Label lblNumSwap;
+        private System.Windows.Forms.Button btnBack;
     }
 }

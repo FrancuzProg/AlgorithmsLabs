@@ -52,11 +52,14 @@ namespace AlgorithmsLabs
         {
             Sort.ResetCounters();
             int[] Array = GetArray(dgvArray);
+            DatabaseController.CreateTable();
             Stopwatch timer = new Stopwatch();
             timer.Start();
             CallSort(Array, btnSort);
             timer.Stop();
             SetSortedArray(dgvSortedArray, Array);
+            DatabaseController.SetIteration(Array);
+            DatabaseController.AddSort(btnSort.Substring(3), timer.Elapsed.ToString(), Sort.GetCompareCount(), Sort.GetSwapCount(), Array);
             return timer.Elapsed.ToString();
         }
 
